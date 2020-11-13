@@ -123,6 +123,9 @@
         .pb-0{
             padding-bottom: 0;
         }
+        .pl-20 {
+            padding-left: 20px;
+        }
         .pb-10{
             padding-bottom: 10px;
         }
@@ -202,130 +205,53 @@
             </td>
         </tr>
     </table>
+    <!-- 100% wrapper (grey background) -->
+    <table class="container theme-background-color-2 p-20">
+        <tbody>
+            <tr>
+                <td>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                      <img src="https://agenciavinci.vteximg.com.br/arquivos/logo.png" width="120" class="text-center"/>
+                                            
+                                        
+                                                <strong>
+                                                  <h1 class="pl-20">Promoção "{{name}}" esta pronta para ser usada</h1>
+                                                </strong>
+                                                
+                                        <p class="p-20 pb-0">
+                                                A promoção "{{name}}" possui o identificador <span>{{id}}</span>.
+                                        </p>
+                                      
+                                       
+                                        <p class="p-20 pb-0">
+                                            Esse email é enviado automaticamente e não recebe respostas.
+                                        </p>
+                                        <p class="p-20 pb-0">
+                                            Precisa de ajuda?
+                                            <a href="https://help.vtex.com/?locale=en" alt="VTEX Help" class="theme-color-2">
+                                                Fale Conosco
+                                            </a>
+                                        </p><br>
+                                        <p class="pl-20">
+                                            © VTEX Praia de Botafogo, 300, 3º Andar, Botafogo, Rio de Janeiro, RJ,
+                                            22250-040
+                                        </p>
+                                  </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+     <!-- **********************************************************
+            ************************** FOOTER *****************************
+            *********************************************************** -->
 
-    
-    	<table class="container">
-			<tr>
-				<td align='center' valign='top'>
-					<table border='0' cellpadding='0' cellspacing='0' width='700'>
-						<tr>
-							<td align='center' valign='top'>
-								<!-- // Begin Template Body \\ -->
-								<table border='0' cellpadding='0' cellspacing='0' width='700'>
-									<tr>
-										<td>
-											<a href='http://{{_accountInfo.HostName}}.com.br' target='_blank' style='border:none;'>
-												<img src='http://licensemanager.vtex.com.br/api/site/pub/accounts/{{_accountInfo.Id}}/logos/show' border='0' alt='{{_accountInfo.TradingName}}' style='border:none;' />
-											</a>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<p class="p-20 pb-0 theme-color-2 size-1"><strong>Olá, {{recipientName}} !</strong></p>
-                                            <p class="p-20 pb-0 theme-color-3"><a href='mailto:{{senderMail}}'>{{senderName}}</a> comprou os seguintes produtos para a sua lista <strong><a href='{{listUrl}}' target='_blank'>{{listName}}</a></strong>.<p>
-											<br />
-                                            <table>
-    											<tbody>
-													{{#each products}}
-														{{#if Name}}
-														<tr>
-															<td>
-																{{Quantity}}
-															</td>
-															<td>
-																{{Name}}
-															</td>
-															<td class="p-20 pb-0 theme-color-3">
-																R$ {{formatCurrency Value}}
-															</td>
-														</tr>
-														{{/if}}
-													{{/each}}
-													{{#each productsNotWished}}
-														{{#if Name}}
-														<tr>
-															<td>
-																{{Quantity}}
-															</td>
-															<td>
-																{{Name}}
-															</td>
-															<td class="p-20 pb-0 theme-color-3">
-																R$ {{formatCurrency Value}}
-															</td>
-														</tr>
-														{{/if}}
-													{{/each}}
-												</tbody>
-											</table>
-                                            <table>
-    											<tbody>
-                                                    <tr>
-                                                        <td class="p-20 pb-0 theme-color-3">
-                											Itens 
-														</td>
-														<td class="p-20 pb-0 theme-color-3">
-															R$ {{formatCurrency valueItems}}<br>
-														</td>
-													</tr>
-                                                    <tr>
-                                                        <td class="p-20 pb-0 theme-color-3">
-        													Frete 
-														</td>
-														<td class="p-20 pb-0 theme-color-3">
-                                                            {{#if valueShipping}}
-															R$ {{formatCurrency valueShipping}}<br>
-                                                            {{else}}
-        													Grátis<br>
-                                                            {{/if}}
-														</td>
-												    </tr>
-                                                    {{#if valueDiscounts}}
-                                                    <tr>
-                                                        <td class="p-20 pb-0 theme-color-3">
-            												Descontos 
-														</td>
-														<td class="p-20 pb-0 theme-color-3">
-															R$ {{formatCurrency valueDiscounts}}<br>
-														</td>
-													</tr>
-                                                    {{/if}}
-                                                    {{#if valueTax}}
-                                                    <tr>
-                                                        <td class="p-20 pb-0 theme-color-3">
-                											Taxas 
-														</td>
-														<td class="p-20 pb-0 theme-color-3">
-															R$ {{formatCurrency valueTax}}<br>
-														</td>
-													</tr>
-                                                    {{/if}}
-                                                    <tr>
-                                                        <td class="p-20 theme-color-3">
-                    										Total 
-														</td>
-                                                        <td class="p-20 theme-color-3">
-                                                            R$ {{formatCurrency valueTotal}}            												
-														</td>
-												    </tr>
-												</tbody>
-											</table>
-										</td>
-									</tr>
-								</table>
-								<!-- // End Template Body \\ -->
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
-
- <!-- **********************************************************
-    ************************** FOOTER *****************************
-    *********************************************************** -->
-
-    <table class="container theme-background-color-1">
+  <table class="container theme-background-color-1">
         <tr>
             <td class="col-6 text-left p-20 theme-color-1">
                 Agência Vinci. Todos os direitos são reservados
@@ -338,4 +264,5 @@
         </tr>
     </table>
 </body>
+
 </html>
