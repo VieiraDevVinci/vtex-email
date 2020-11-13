@@ -215,19 +215,24 @@
 
     <table class="container theme-background-color-2">
         <tr>
-            <td class="p-20 pb-0 size-3 theme-color-2">
-                <strong>Erro ao exportar Planilha de Ofertas do SKUs Enviados</strong>
+            <td class="p-20 pb-0 size-2 theme-color-2">
+                <strong>Planilha de Ofertas do SKUs Enviados exportada</strong>
             </td>
         </tr>
         <tr>
              <td class="p-20 pb-0 theme-color-3"> 
-                Ocorreu um erro desconhecido ao exportar a planilha de Ofertas. Por favor, tente novamente. <br/>Por favor, tente novamente.
+                <p class="size-3 theme-color-3"><strong>Olá, {{to.0.name}}!</strong> Clique no botão abaixo para fazer download da planilha.</p>
+                <br />
+                <a href="{{additionalData.link}}" class="btn-1">
+                    Download Planilha
+                </a>
             </td>
         </tr>
         <tr>
              <td class="p-20 theme-color-3 size-4">
                 <hr>
-                Esse email é enviado automaticamente e não recebe respostas.
+                Esse email é enviado automaticamente e não recebe respostas.</br>
+                Este link é válido por duas horas, depois disso é necessário gerar outra exportação
             </td>
         </tr>
     </table>
@@ -251,3 +256,4 @@
     </table>
 </body>
 </html>
+
