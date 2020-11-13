@@ -148,120 +148,134 @@
             border: 1px solid #ddd;
             margin: 10px 0;
         }
-        .btn-1{
-          background-color:#d30255;
-          display: inline-block;
-          color: #fff;
-          text-transform: uppercase;
-          margin: 10px 0px;
-          padding: 5px 10px;
-        }
+
         .img-normal{
             width: 150px;
             height: auto;
         }
         .img-thumb{
             width: 90px;
-            height: auto;
+             height: auto;
         }
+
         .m-l-auto{
             margin-left: auto;
         }
         .strong{
             font-weight: 700;
         }
-        .pt-0{
-          padding-top: 0;
-        }
+        .btn-1 {
+              background-color: #d30255;
+              display: inline-block;
+              color: #fff;
+              text-transform: uppercase;
+              margin: 10px 0px;
+              padding: 5px 10px;
+        }   
+      
     </style>
 </head>
 
 <body>
 
-  <!-- **********************************************************
-  ************************** HEADER *****************************
-  *********************************************************** -->
+    <!-- **********************************************************
+    ************************** HEADER *****************************
+    *********************************************************** -->
 
-  <table class="container theme-background-color-1">
-      <tr>
-          <td class="text-center col-2 p-20">
-              <a href="https://agenciavinci.myvtex.com/" class="theme-color-1 text-center">
-                  LOJA
-              </a>
-          </td>
-          <td class="text-center col-2 p-20">
-              <a href="https://agenciavinci.myvtex.com/" class="theme-color-1 text-center">
-                  CAMISAS
-              </a>
-          </td>
-          <td class="text-center col-2 p-20">
-              <a href="https://agenciavinci.myvtex.com/"  class="text-center d-block">
-                  <img src="https://agenciavinci.vteximg.com.br/arquivos/logo.png" width="120" class="text-center"/>
-              </a>
-          </td>
-          <td class="text-center col-2 p-20">
-              <a href="https://agenciavinci.myvtex.com/" class="theme-color-1 text-center">
-                  CALÇAS
-              </a>
-          </td>
-          <td class="text-center col-2 p-20">
-              <a href="https://agenciavinci.myvtex.com/" class="theme-color-1 text-center">
-                  PROMOÇOES
-              </a>
-          </td>
-      </tr>
-  </table>
+    <table class="container theme-background-color-1">
+        <tr>
+            <td class="text-center col-2 p-20">
+                <a href="https://agenciavinci.myvtex.com/" class="theme-color-1 text-center">
+                    LOJA
+                </a>
+            </td>
+            <td class="text-center col-2 p-20">
+                <a href="https://agenciavinci.myvtex.com/" class="theme-color-1 text-center">
+                    CAMISAS
+                </a>
+            </td>
+            <td class="text-center col-2 p-20">
+                <a href="https://agenciavinci.myvtex.com/"  class="text-center d-block">
+                    <img src="https://agenciavinci.vteximg.com.br/arquivos/logo.png" width="120" class="text-center"/>
+                </a>
+            </td>
+            <td class="text-center col-2 p-20">
+                <a href="https://agenciavinci.myvtex.com/" class="theme-color-1 text-center">
+                    CALÇAS
+                </a>
+            </td>
+            <td class="text-center col-2 p-20">
+                <a href="https://agenciavinci.myvtex.com/" class="theme-color-1 text-center">
+                    PROMOÇOES
+                </a>
+            </td>
+        </tr>
+    </table>
 
-
-
-
-  <table class="container theme-background-color-2">
-    <tr>
-      <td class="p-20 pb-0 theme-color-2 size-1">
-          <strong>{{_accountInfo.AccountName}}</strong>
-      </td>
-    </tr>
-    <tr>
-      <td class="p-20 pb-0 theme-color-3">
-          Relatório de contas exportadas do Customer Credit
-      </td>
-    </tr>
-    <tr>
-      <td class="p-20 pb-0 theme-color-3">
-          Olá,
-      </td>
-    </tr>
-    <tr>
-      <td class="p-20  pb-0  pt-0 theme-color-3">
-          Clique no botão abaixo para baixar o relatório do Customer Credit
-      </td>
-    </tr>
-    <tr>
-      <td class="p-20  pb-0 pt-0 theme-color-3">
-        <a href="{{export.link}}" class="btn-1 size-4" download>
-            Baixar Relatório
-        </a>
-      </td>
-    </tr>
-    <tr>
-      <td class="p-20  pb-0 pt-0 theme-color-3">
-          Saudações, {{_accountInfo.TradingName}}.
-      </td>
-    </tr>
+<bod>
+  <table class="container">
     <tr>
       <td>
-        <hr/>
-      </td>
-    </tr>
-    <tr>
-      <td class="p-20 theme-color-3 size-4">
-          Por favor não responda esse email diretamente, pois não seremos capazes de responder por esse endereço.
+        <table>
+          <tr>
+            <td>
+              <table>
+                <tbody>
+                  <tr>
+                    
+                    <td class="p-20 pb-0"> 
+                      {{storeAlias}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="p-20 pb-0">
+                      <h1 class="size-1 theme-color-3">Seu relatório de comissionamento está pronto</h1>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="p-20 pb-0">
+                      Seu relatório de comissionamento referente ao período de <span>
+                        {{date}}</span> já está pronto  para download. Nele, você pode conferir as comissões referentes aos <span>pedidos faturados</span> nesse período.
+                        <br /><br />Para fazer o download do arquivo .xlsx, clique no botão abaixo.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="p-20 pb-0">
+                    <a href={{link}} class="btn-1">BAIXAR RELATÓRIO</a>        
+                    
+                        
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="p-20 pb-0">
+                      Caso não consiga clicar no botão acima, copie e cole o link abaixo no seu navegador: <a href={{link}} class="theme-color-2">{{link}}</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="p-20 pb-0">
+                      Abraços,<br/> Agencia Vinci.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <hr>
+                    </hr></td>
+                  </tr>
+                  <tr>
+                    <td class="size-5 p-20" >
+                      Não responda a esse e-mail, ele é enviado automaticamente pelo sistema.
+                    </td>
+                  </tr>
+  
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </table>
       </td>
     </tr>
   </table>
-
-
-    <!-- **********************************************************
+  <!-- **********************************************************
     ************************** FOOTER *****************************
     *********************************************************** -->
 
