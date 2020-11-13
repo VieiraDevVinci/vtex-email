@@ -32,5 +32,8 @@ module.exports = {
         "ParentAccountName": null,
         "InactivationDate": null,
         "Platform": "vtex"
-    }
+    },
+    "message": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam maiores modi, earum itaque molestias aspernatur voluptatum debitis reiciendis adipisci sequi.",
+    "signature":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam maiores modi, earum itaque molestias aspernatur voluptatum debitis reiciendis adipisci sequi.",
+    "link":"https://teste.com"
 }
