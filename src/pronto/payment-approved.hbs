@@ -152,9 +152,7 @@
         .mb-20 {
             margin-bottom: 20px;
         }
-        .pt-20{
-            padding-top: 20px;
-        }
+      
 
         .p-20 {
             padding: 20px;
@@ -277,19 +275,19 @@
             </td>
         </tr>
     </table>
-    <table class="container">
+    <table class="container theme-background-color-2">
         <tbody>
             <tr>
-                <td>
-                    <strong class="size-1 theme-color-2 pt-20 p-20">Seu pagamento foi aprovado.</strong>
+                <td class="p-20">
+                    <strong class="size-1 theme-color-2  ">Seu pagamento foi aprovado.</strong>
                     <br>
                     <span>Referente ao Pedido #{{orderId}}</span>
 
                 </td>
             </tr>
             <tr>
-                <td>
-                    <p>
+                <td class="p-20 size-3">
+                    <strong >
                         {{#if orders}}
                         {{#if orders.0.clientProfileData.firstName}}
                         {{#compare orders.0.clientProfileData.firstName '!=' 'isAnonymous'}}
@@ -310,13 +308,13 @@
                         Estamos providenciando a emissão da Nota Fiscal do seu pedido e o envio do seu
                         produto.
                         {{/compare}}
-                    </p>
+                    </strong>
                 </td>
             </tr>
             <tr>
             <tr>
-                <td class="ph4-ns" align="left">
-                    <h3>Pagamento</h3>
+                <td class="p-20" align="left">
+                    <h3 class="size-1 theme-color-2">Pagamento</h3>
                     {{#each paymentData.transactions}}
                     {{#compare payments.length "==" 1}}
                     {{#each payments}}
@@ -356,10 +354,10 @@
             </tr>
             </tr>
             <tr>
-                <td class="ph4-ns" align="left">
-                    <p style="box-sizing: border-box !important;">
+                <td class="p-20" align="left">
+                    <spam >
                         Atenciosamente,<br />Equipe {{_accountInfo.TradingName}}
-                    </p>
+                    </spam>
                 </td>
             </tr>
         </tbody>
