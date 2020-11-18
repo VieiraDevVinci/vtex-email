@@ -123,6 +123,9 @@
         .pb-0{
             padding-bottom: 0;
         }
+        .pl-20 {
+            padding-left: 20px;
+        }
         .pb-10{
             padding-bottom: 10px;
         }
@@ -202,130 +205,43 @@
             </td>
         </tr>
     </table>
-
-    
-    	<table class="container">
+<body>
+	
+		<table class="container theme-background-color-2">
 			<tr>
-				<td align='center' valign='top'>
-					<table border='0' cellpadding='0' cellspacing='0' width='700'>
+				<td>
+					<table>
 						<tr>
-							<td align='center' valign='top'>
-								<!-- // Begin Template Body \\ -->
-								<table border='0' cellpadding='0' cellspacing='0' width='700'>
+							<td>
+								<table>
 									<tr>
 										<td>
-											<a href='http://{{_accountInfo.HostName}}.com.br' target='_blank' style='border:none;'>
-												<img src='http://licensemanager.vtex.com.br/api/site/pub/accounts/{{_accountInfo.Id}}/logos/show' border='0' alt='{{_accountInfo.TradingName}}' style='border:none;' />
+											<a href='http://{{_accountInfo.HostName}}.com.br' target='_blank'>
+												<img src='http://licensemanager.vtex.com.br/api/site/pub/accounts/{{_accountInfo.Id}}/logos/show' alt='{{_accountInfo.TradingName}}'/>
 											</a>
 										</td>
 									</tr>
 									<tr>
 										<td>
-											<p class="p-20 pb-0 theme-color-2 size-1"><strong>Olá, {{recipientName}} !</strong></p>
-                                            <p class="p-20 pb-0 theme-color-3"><a href='mailto:{{senderMail}}'>{{senderName}}</a> comprou os seguintes produtos para a sua lista <strong><a href='{{listUrl}}' target='_blank'>{{listName}}</a></strong>.<p>
+											<p>Olá, {{recipientName}} !</p>
+											<p>{{senderName}} ( <a href='mailto:{{senderMail}}'>{{senderMail}}</a> ) sugeriu a lista <strong><a href='{{listUrl}}' target='_blank'>{{listName}}</a></strong> para você.<p>
 											<br />
-                                            <table>
-    											<tbody>
-													{{#each products}}
-														{{#if Name}}
-														<tr>
-															<td>
-																{{Quantity}}
-															</td>
-															<td>
-																{{Name}}
-															</td>
-															<td class="p-20 pb-0 theme-color-3">
-																R$ {{formatCurrency Value}}
-															</td>
-														</tr>
-														{{/if}}
-													{{/each}}
-													{{#each productsNotWished}}
-														{{#if Name}}
-														<tr>
-															<td>
-																{{Quantity}}
-															</td>
-															<td>
-																{{Name}}
-															</td>
-															<td class="p-20 pb-0 theme-color-3">
-																R$ {{formatCurrency Value}}
-															</td>
-														</tr>
-														{{/if}}
-													{{/each}}
-												</tbody>
-											</table>
-                                            <table>
-    											<tbody>
-                                                    <tr>
-                                                        <td class="p-20 pb-0 theme-color-3">
-                											Itens 
-														</td>
-														<td class="p-20 pb-0 theme-color-3">
-															R$ {{formatCurrency valueItems}}<br>
-														</td>
-													</tr>
-                                                    <tr>
-                                                        <td class="p-20 pb-0 theme-color-3">
-        													Frete 
-														</td>
-														<td class="p-20 pb-0 theme-color-3">
-                                                            {{#if valueShipping}}
-															R$ {{formatCurrency valueShipping}}<br>
-                                                            {{else}}
-        													Grátis<br>
-                                                            {{/if}}
-														</td>
-												    </tr>
-                                                    {{#if valueDiscounts}}
-                                                    <tr>
-                                                        <td class="p-20 pb-0 theme-color-3">
-            												Descontos 
-														</td>
-														<td class="p-20 pb-0 theme-color-3">
-															R$ {{formatCurrency valueDiscounts}}<br>
-														</td>
-													</tr>
-                                                    {{/if}}
-                                                    {{#if valueTax}}
-                                                    <tr>
-                                                        <td class="p-20 pb-0 theme-color-3">
-                											Taxas 
-														</td>
-														<td class="p-20 pb-0 theme-color-3">
-															R$ {{formatCurrency valueTax}}<br>
-														</td>
-													</tr>
-                                                    {{/if}}
-                                                    <tr>
-                                                        <td class="p-20 theme-color-3">
-                    										Total 
-														</td>
-                                                        <td class="p-20 theme-color-3">
-                                                            R$ {{formatCurrency valueTotal}}            												
-														</td>
-												    </tr>
-												</tbody>
-											</table>
+											<p>{{text}}</p>
 										</td>
 									</tr>
 								</table>
-								<!-- // End Template Body \\ -->
 							</td>
 						</tr>
 					</table>
+					<br />
 				</td>
 			</tr>
 		</table>
+          <!-- **********************************************************
+            ************************** FOOTER *****************************
+            *********************************************************** -->
 
- <!-- **********************************************************
-    ************************** FOOTER *****************************
-    *********************************************************** -->
-
-    <table class="container theme-background-color-1">
+  <table class="container theme-background-color-1">
         <tr>
             <td class="col-6 text-left p-20 theme-color-1">
                 Agência Vinci. Todos os direitos são reservados
@@ -337,5 +253,6 @@
             </td>
         </tr>
     </table>
+	
 </body>
 </html>

@@ -148,21 +148,39 @@
             border: 1px solid #ddd;
             margin: 10px 0;
         }
-
+        .btn-1{
+          background-color:#d30255;
+          display: inline-block;
+          color: #fff;
+          text-transform: uppercase;
+          margin: 10px 0px;
+          padding: 5px 10px;
+        }
         .img-normal{
             width: 150px;
             height: auto;
         }
         .img-thumb{
             width: 90px;
-             height: auto;
+            height: auto;
         }
-
         .m-l-auto{
             margin-left: auto;
         }
         .strong{
             font-weight: 700;
+        }
+        .pt-0{
+          padding-top: 0;
+        }
+        .border-1{
+            border: 1px solid #ddd;
+        }
+        .pl-0{
+            padding-left: 0;
+        }
+        .pr-0{
+            padding-right: 0;
         }
     </style>
 </head>
@@ -203,125 +221,125 @@
         </tr>
     </table>
 
-    
-    	<table class="container">
-			<tr>
-				<td align='center' valign='top'>
-					<table border='0' cellpadding='0' cellspacing='0' width='700'>
-						<tr>
-							<td align='center' valign='top'>
-								<!-- // Begin Template Body \\ -->
-								<table border='0' cellpadding='0' cellspacing='0' width='700'>
-									<tr>
-										<td>
-											<a href='http://{{_accountInfo.HostName}}.com.br' target='_blank' style='border:none;'>
-												<img src='http://licensemanager.vtex.com.br/api/site/pub/accounts/{{_accountInfo.Id}}/logos/show' border='0' alt='{{_accountInfo.TradingName}}' style='border:none;' />
-											</a>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<p class="p-20 pb-0 theme-color-2 size-1"><strong>Olá, {{recipientName}} !</strong></p>
-                                            <p class="p-20 pb-0 theme-color-3"><a href='mailto:{{senderMail}}'>{{senderName}}</a> comprou os seguintes produtos para a sua lista <strong><a href='{{listUrl}}' target='_blank'>{{listName}}</a></strong>.<p>
-											<br />
-                                            <table>
-    											<tbody>
-													{{#each products}}
-														{{#if Name}}
-														<tr>
-															<td>
-																{{Quantity}}
-															</td>
-															<td>
-																{{Name}}
-															</td>
-															<td class="p-20 pb-0 theme-color-3">
-																R$ {{formatCurrency Value}}
-															</td>
-														</tr>
-														{{/if}}
-													{{/each}}
-													{{#each productsNotWished}}
-														{{#if Name}}
-														<tr>
-															<td>
-																{{Quantity}}
-															</td>
-															<td>
-																{{Name}}
-															</td>
-															<td class="p-20 pb-0 theme-color-3">
-																R$ {{formatCurrency Value}}
-															</td>
-														</tr>
-														{{/if}}
-													{{/each}}
-												</tbody>
-											</table>
-                                            <table>
-    											<tbody>
-                                                    <tr>
-                                                        <td class="p-20 pb-0 theme-color-3">
-                											Itens 
-														</td>
-														<td class="p-20 pb-0 theme-color-3">
-															R$ {{formatCurrency valueItems}}<br>
-														</td>
-													</tr>
-                                                    <tr>
-                                                        <td class="p-20 pb-0 theme-color-3">
-        													Frete 
-														</td>
-														<td class="p-20 pb-0 theme-color-3">
-                                                            {{#if valueShipping}}
-															R$ {{formatCurrency valueShipping}}<br>
-                                                            {{else}}
-        													Grátis<br>
-                                                            {{/if}}
-														</td>
-												    </tr>
-                                                    {{#if valueDiscounts}}
-                                                    <tr>
-                                                        <td class="p-20 pb-0 theme-color-3">
-            												Descontos 
-														</td>
-														<td class="p-20 pb-0 theme-color-3">
-															R$ {{formatCurrency valueDiscounts}}<br>
-														</td>
-													</tr>
-                                                    {{/if}}
-                                                    {{#if valueTax}}
-                                                    <tr>
-                                                        <td class="p-20 pb-0 theme-color-3">
-                											Taxas 
-														</td>
-														<td class="p-20 pb-0 theme-color-3">
-															R$ {{formatCurrency valueTax}}<br>
-														</td>
-													</tr>
-                                                    {{/if}}
-                                                    <tr>
-                                                        <td class="p-20 theme-color-3">
-                    										Total 
-														</td>
-                                                        <td class="p-20 theme-color-3">
-                                                            R$ {{formatCurrency valueTotal}}            												
-														</td>
-												    </tr>
-												</tbody>
-											</table>
-										</td>
-									</tr>
-								</table>
-								<!-- // End Template Body \\ -->
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
+    <table class="container theme-background-color-2">
+        <tr>
+            <td class="p-20 pb-0">
+                <strong class="size-2 theme-color-2">Sua assinatura foi expirada</strong>
+            </td>
+        </tr>
+        <tr>
+            <td class="p-20 pb-0 theme-color-3">
+                Olá, {{customerProfile.name}}.
+                            <br><br> Sua assinatura expirou, mas você pode retomá-la a qualquer momento
+                            <a href="http://{{_accountInfo.HostName}}.com.br/_secure/Account/Orders/">através do nosso
+                                site
+            </td>
 
- <!-- **********************************************************
+        </tr>
+    </table>
+   
+    <table class="container theme-background-color-2">
+        <tr>
+             <td class="p-20 pt-0">
+                <strong class="size-2 theme-color-2">Produtos</strong>
+            </td>
+            <td class="p-20"></td>
+        </tr>
+        
+        {{#if items.[0]}}
+            <tr>
+                <td class="text-center p-20 pr-0">
+                    <img alt="{{_accountInfo.TradingName}}" src="{{items.0.sku.imageUrl}}" width="150" class="border-1 p-20"/>
+                </td>
+                <td class="p-20 pl-0">
+                    
+                    <strong class="size-3 theme-color-2">{{items.0.sku.nameComplete}}</strong>
+                    <br/>
+                    <br/>
+                    <strong class="theme-color-3">Quantidade: </strong> {{items.0.quantity}} un.
+                    <br/>
+                    <br/>
+                    <strong class="theme-color-3">Valor:</strong> {{purchaseSettings.currencySymbol}} {{formatCurrency items.0.priceAtSubscriptionDate}}
+                </td>
+            </tr>
+        {{/if}}
+
+        {{#if items.[1]}}
+            <tr>
+                <td class="text-center p-20 pr-0">
+                    <img alt="{{_accountInfo.TradingName}}" src="{{items.1.sku.imageUrl}}" width="150" class="border-1 p-20"/>
+                </td>
+                <td class="p-20 pl-0">
+                    
+                    <strong class="size-3 theme-color-2">{{items.1.sku.nameComplete}}</strong>
+                    <br/>
+                    <br/>
+                    <strong class="theme-color-3">Quantidade: </strong> {{items.1.quantity}} un.
+                    <br/>
+                    <br/>
+                    <strong class="theme-color-3">Valor:</strong> {{purchaseSettings.currencySymbol}} {{formatCurrency items.1.priceAtSubscriptionDate}}
+                </td>
+            </tr>
+        {{/if}}
+
+        {{#if items.[2]}}
+            <tr>
+                <td class="text-center p-20 pr-0">
+                    <img alt="{{_accountInfo.TradingName}}" src="{{items.2.sku.imageUrl}}" width="150" class="border-1 p-20"/>
+                </td>
+                <td class="p-20 pl-0">
+                    
+                    <strong class="size-3 theme-color-2">{{items.2.sku.nameComplete}}</strong>
+                    <br/>
+                    <br/>
+                    <strong class="theme-color-3">Quantidade: </strong> {{items.2.quantity}} un.
+                    <br/>
+                    <br/>
+                    <strong class="theme-color-3">Valor:</strong> {{purchaseSettings.currencySymbol}} {{formatCurrency items.2.priceAtSubscriptionDate}}
+                </td>
+            </tr>
+        {{/if}}
+        
+        <tr>
+            <td class="p-20 pb-0">
+                <a class="btn-1" href="http://{{_accountInfo.HostName}}.com.br/_secure/Account/Orders/">VER TODOS OS {{activeItemsCount}} ITENS</a>
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+    </table>
+
+    <table class="container theme-background-color-2">
+        <tr>
+            <td class="p-20 pt-0 pb-0">
+                <hr />
+            </td>
+        </tr>
+    </table>
+
+    <table class="container theme-background-color-2">
+        <tr>
+            <td class="p-20 pt-0">
+                <strong class="size-2 theme-color-2">Resumo da sua assinatura</strong>
+            </td>
+        </tr>
+        <tr>
+             <td class="p-20 pt-0">
+                <strong class="theme-color-3">Entrega estimada: </strong>
+                {{formatDate shippingEstimate.estimatedDeliveryDate}}
+            </td>
+        </tr>
+        <tr>
+            <td class="p-20 pt-0 size-4 theme-color-3">
+                Atenciosamente, <br/>
+                Equipe {{_accountInfo.TradingName}}.
+            </td>
+        </tr>
+    </table>
+
+
+    <!-- **********************************************************
     ************************** FOOTER *****************************
     *********************************************************** -->
 

@@ -164,6 +164,15 @@
         .strong{
             font-weight: 700;
         }
+        .btn-1 {
+              background-color: #d30255;
+              display: inline-block;
+              color: #fff;
+              text-transform: uppercase;
+              margin: 10px 0px;
+              padding: 5px 10px;
+        }   
+      
     </style>
 </head>
 
@@ -202,125 +211,25 @@
             </td>
         </tr>
     </table>
+<body>
 
-    
-    	<table class="container">
-			<tr>
-				<td align='center' valign='top'>
-					<table border='0' cellpadding='0' cellspacing='0' width='700'>
-						<tr>
-							<td align='center' valign='top'>
-								<!-- // Begin Template Body \\ -->
-								<table border='0' cellpadding='0' cellspacing='0' width='700'>
-									<tr>
-										<td>
-											<a href='http://{{_accountInfo.HostName}}.com.br' target='_blank' style='border:none;'>
-												<img src='http://licensemanager.vtex.com.br/api/site/pub/accounts/{{_accountInfo.Id}}/logos/show' border='0' alt='{{_accountInfo.TradingName}}' style='border:none;' />
-											</a>
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<p class="p-20 pb-0 theme-color-2 size-1"><strong>Olá, {{recipientName}} !</strong></p>
-                                            <p class="p-20 pb-0 theme-color-3"><a href='mailto:{{senderMail}}'>{{senderName}}</a> comprou os seguintes produtos para a sua lista <strong><a href='{{listUrl}}' target='_blank'>{{listName}}</a></strong>.<p>
-											<br />
-                                            <table>
-    											<tbody>
-													{{#each products}}
-														{{#if Name}}
-														<tr>
-															<td>
-																{{Quantity}}
-															</td>
-															<td>
-																{{Name}}
-															</td>
-															<td class="p-20 pb-0 theme-color-3">
-																R$ {{formatCurrency Value}}
-															</td>
-														</tr>
-														{{/if}}
-													{{/each}}
-													{{#each productsNotWished}}
-														{{#if Name}}
-														<tr>
-															<td>
-																{{Quantity}}
-															</td>
-															<td>
-																{{Name}}
-															</td>
-															<td class="p-20 pb-0 theme-color-3">
-																R$ {{formatCurrency Value}}
-															</td>
-														</tr>
-														{{/if}}
-													{{/each}}
-												</tbody>
-											</table>
-                                            <table>
-    											<tbody>
-                                                    <tr>
-                                                        <td class="p-20 pb-0 theme-color-3">
-                											Itens 
-														</td>
-														<td class="p-20 pb-0 theme-color-3">
-															R$ {{formatCurrency valueItems}}<br>
-														</td>
-													</tr>
-                                                    <tr>
-                                                        <td class="p-20 pb-0 theme-color-3">
-        													Frete 
-														</td>
-														<td class="p-20 pb-0 theme-color-3">
-                                                            {{#if valueShipping}}
-															R$ {{formatCurrency valueShipping}}<br>
-                                                            {{else}}
-        													Grátis<br>
-                                                            {{/if}}
-														</td>
-												    </tr>
-                                                    {{#if valueDiscounts}}
-                                                    <tr>
-                                                        <td class="p-20 pb-0 theme-color-3">
-            												Descontos 
-														</td>
-														<td class="p-20 pb-0 theme-color-3">
-															R$ {{formatCurrency valueDiscounts}}<br>
-														</td>
-													</tr>
-                                                    {{/if}}
-                                                    {{#if valueTax}}
-                                                    <tr>
-                                                        <td class="p-20 pb-0 theme-color-3">
-                											Taxas 
-														</td>
-														<td class="p-20 pb-0 theme-color-3">
-															R$ {{formatCurrency valueTax}}<br>
-														</td>
-													</tr>
-                                                    {{/if}}
-                                                    <tr>
-                                                        <td class="p-20 theme-color-3">
-                    										Total 
-														</td>
-                                                        <td class="p-20 theme-color-3">
-                                                            R$ {{formatCurrency valueTotal}}            												
-														</td>
-												    </tr>
-												</tbody>
-											</table>
-										</td>
-									</tr>
-								</table>
-								<!-- // End Template Body \\ -->
-							</td>
-						</tr>
-					</table>
-				</td>
-			</tr>
-		</table>
 
+<table class="container theme-background-color-2 p-20">
+	<tr>
+		<td>
+			<h1>{{title}} <br> <span class="theme-color-2 size-3">({{_accountInfo.TradingName}})</span></h1>
+            <p>{{description}}</p>
+            <a href="{{link}}" class="theme-color-2">Download</a><br>
+        </td>
+	</tr>
+    <tr>
+		<td>
+			<a href='http://{{_accountInfo.HostName}}.com.br' target='_blank' class="theme-color-2">
+				<img src='http://licensemanager.vtex.com.br/api/site/pub/accounts/{{_accountInfo.Id}}/logos/show' alt='{{_accountInfo.TradingName}}' />
+			</a>
+		</td>
+	</tr>
+</table>
  <!-- **********************************************************
     ************************** FOOTER *****************************
     *********************************************************** -->

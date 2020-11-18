@@ -207,38 +207,66 @@
             <tr>
                 <td class="size-2 theme-color-2 p-20"> 
                     <strong>
-                        Erro ao exportar Planilha de Logs do SKUs Enviados
+                         Não foi possível criar a promoção "{{name}}"
                     </strong>
                 </td>
             </tr>
+        </table>
+        
+        
+        <table class="container theme-background-color-2">
+            {{#if spreadSheetIsTooBig}}
+                <tr>
+                    <td class="p-20">
+                        Cada Planilha deve conter no máximo {{spreadsheetMaxSize}} linhas, caso realmente necessite crie múltiplas promoções.
+                    </td>
+                </tr>
+            {{/if}}
+            {{#if errors}}
+                <tr>
+                    <td class="p-20">
+                        <strong>Os seguintes valores inválidos foram encontrados na planilha enviada:</strong>
+                    </td>
+                </tr>
 
-            <tr>
-                <td class="p-20 pb-0"> 
-                    Olá, 
-                </td>
-            </tr>
+
+            {{#each errors}}
+                <tr>
+                    <td class="p-20 pt-0 pb-0">
+                        <strong class="theme-color-3">{{row}}: </strong> {{error}}
+                    </td>
+                </tr>
+            {{/each}}
+
+            {{/if}}
+        </table>
+        
+        <table class="container theme-background-color-2">
             <tr>
                 <td class="p-20 pb-0">
-                                                Ocorreu um erro desconhecido ao exportar a planilha de Logs. Por favor, tente novamente.
+                    Por favor, verifique as informações e realize um novo envio.
+                </td>
             </tr>
             <tr>
-                <td class="p-20 pb-0">  
-                    Abraços, </br>
-                    Agencia Vinci
+                <td class="p-20 pb-0 size-4 theme-color-3">  
+                    <hr />
+                    Abraços, {{_accountInfo.TradingName}}
                 </td>
             </tr>
 
             <tr>
-                <td class="p-20 size-4"> 
+                <td class="p-20 size-4 pt-0 theme-color-3"> 
                     Esse email é enviado automaticamente e não recebe respostas.
                 </td>
             </tr>
         </table>
-        <!-- **********************************************************
-            ************************** FOOTER *****************************
-            *********************************************************** -->
+        
 
-        <table class="container theme-background-color-1">
+        <!-- **********************************************************
+        ************************** FOOTER *****************************
+        *********************************************************** -->
+
+        <table class="container theme-background-color-1 ">
             <tr>
                 <td class="col-6 text-left p-20 theme-color-1">
                     Agência Vinci. Todos os direitos são reservados
