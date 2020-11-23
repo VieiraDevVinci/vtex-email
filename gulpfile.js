@@ -5,12 +5,19 @@ const rename = require('gulp-rename');
 const templateData = require('./src/data/data');
 const concat = require('gulp-concat');
 
+const helpers = {
+  _formatDateTime: function( value ) {
+    return helpers._formatDateTime( value, 'dd/MM/yyyy h:mm:ss' );
+  }
+}
 
-
-handlebars.registerHelper('eq', function(a,b,c){
-  console.log(a,b,c)
-    return a == b ? c : 'false'
-  });
+handlebars.registerHelper('formatCurrency',function( value ) {
+	return value
+});
+  
+handlebars.registerHelper('formatDate',function( value ) {
+	return value
+});
   
 
 gulp.task('default', function () {    
@@ -19,7 +26,7 @@ gulp.task('default', function () {
 		
 	}
 
-	return gulp.src('src/**/*.hbs')
+	return gulp.src('src/*.hbs')
         .pipe(gulpHandlebars(templateData, options))
         .pipe(rename({extname: ".html"}))
 		.pipe(gulp.dest('build'));
